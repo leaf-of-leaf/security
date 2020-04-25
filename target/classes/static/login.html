@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Please sign in</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">请登录</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </p>
+        <p>
+            <label class="sr-only">code</label>
+            <input type="text" name="ImageCode" class="form-control" placeholder="Code" required>
+            <img src="/code/image" width="50%">
+        </p>
+        <input type="checkbox" name="remember-me"/> 记住我
+        <input name="_csrf" type="hidden" value="e1e3db85-9e4c-4dcb-82b4-865aff7410b2" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <br>
+    <br>
+    <form class="login-page" action="/login/mobile" method="post">
+        <div class="form">
+            <h3>短信验证码登录</h3>
+            <input type="text" placeholder="手机号" name="mobile" value="17777777777" required="required"/>
+            <span style="display: inline">
+            <input type="text" name="smsCode" placeholder="短信验证码" style="width: 50%;"/>
+            <a href="/code/sms?mobile=17777777777">发送验证码</a>
+        </span>
+            <button type="submit">登录</button>
+        </div>
+    </form>
+</div>
+</body></html>
